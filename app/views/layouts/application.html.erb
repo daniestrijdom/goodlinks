@@ -14,6 +14,27 @@
   <% flash.each do |name, msg| %>
     <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
     <% end %>
+
+    <% if user_signed_in? %>
+      <div>you are signed in as 
+      <%= current_user.email %>.
+      <br>
+       <ul>
+     <li><%= link_to "Sumbit link" , new_link_path %></li>
+     <li><%= link_to "Account" , edit_user_registration_path %></li>
+     <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+     </ul>
+      </div>
+      <% else %>
+      <ul>
+      <li><%= link_to 'Sign in', new_user_session_path %></li>
+      <li><%= link_to 'Sign up', new_user_registration_path %></li>
+      </ul>
+      
+      </div>
+    <% end %>
+ 
     <%= yield %>
+
   </body>
 </html>
