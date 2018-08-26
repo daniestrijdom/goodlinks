@@ -10,8 +10,10 @@
   </head>
 
   <body>
+
+  <% flash.each do |name, msg| %>
+    <%= content_tag(:dov, msg, class: "alert alert-#{name}") %>
+    <% end %>
     <%= yield %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
   </body>
 </html>
