@@ -13,10 +13,10 @@
 
   <% flash.each do |name, msg| %>
     <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
-    <% end %>
+  <% end %>
 
     <% if user_signed_in? %>
-      <div>you are signed in as 
+      <div> Signed in as 
       <%= current_user.email %>.
       <br>
        <ul>
