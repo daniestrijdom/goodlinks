@@ -3,7 +3,7 @@
   <div class="link row clearfix">
     <h3>
     <%= link_to link.title , link %><br>
-      <small class="author">Sumbitted <%= time_ago_in_words(link.created_at) %> ago by <%= link.user.email %>
+      <small class="author">Sumbitted <%= time_ago_in_words(link.created_at) %> ago by <%= link.user.username %>
       </small>
     </h3>
 
